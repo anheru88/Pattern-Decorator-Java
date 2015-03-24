@@ -5,7 +5,7 @@
  */
 package WriteFiles;
 
-import Patron_Strategy.Student;
+import strategyPattern.Student;
 import java.util.ArrayList;
 
 /**
@@ -14,6 +14,6 @@ import java.util.ArrayList;
  */
 public interface IWriteFilesStrategy {
 
-    public void Write(ArrayList<Student> S);
+    public void write(ArrayList<Student> S);
 
 }

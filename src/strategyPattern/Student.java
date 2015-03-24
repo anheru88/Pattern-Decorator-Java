@@ -1,4 +1,4 @@
-package Patron_Strategy;
+package strategyPattern;
 
 
 public class Student {

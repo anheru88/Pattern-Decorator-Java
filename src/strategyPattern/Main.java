@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Patron_Strategy;
+package strategyPattern;
 
-import WriteFiles.StudentManager;
+import WriteFiles.JsonWriteFilesStrategy;
+import strategyPattern.StudentManager;
 import WriteFiles.XmlWriteFilesStrategy;
 import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
@@ -32,25 +33,24 @@ public class Main {
 
         for (int i = 0; i < num; i++) {
             Student s = new Student();
-            System.out.println("Please set the name of the student #" + (i + 1));
+            System.out.println("Please set the name of the student # " + (i + 1));
             dato = Scan.nextLine();
             s.setName(dato);
-            System.out.println("Please set the code of the student #" + (i + 1));
+            System.out.println("Please set the code of the student # " + (i + 1));
             dato = Scan.nextLine();
             s.setCode(dato);
-            System.out.println("Please set the age of the student #" + (i + 1));
+            System.out.println("Please set the age of the student # " + (i + 1));
             dato = Scan.nextLine();
             s.setAge(parseInt(dato));
             do {
-                System.out.println("Please set the sex of the student #" + (i + 1) + "like so");
+                System.out.println("Please set the sex of the student # " + (i + 1) + "like so");
                 System.out.println("(M) Masculine, (F) Femenine");
                 dato = Scan.nextLine();
             } while (dato == "M" || dato == "F");
             s.setSex(dato);
-            System.out.println("Please set the address of the student #" + (i + 1));
+            System.out.println("Please set the address of the student # " + (i + 1));
             dato = Scan.nextLine();
             s.setAddress(dato);
-
             S.add(s);
         }
 

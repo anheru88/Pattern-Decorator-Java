@@ -5,17 +5,35 @@
  */
 package WriteFiles;
 
-import Patron_Strategy.Student;
+import com.google.gson.Gson;
+import java.io.FileWriter;
+import java.io.IOException;
+import strategyPattern.Student;
 import java.util.ArrayList;
 
 /**
  *
  * @author anheru
  */
-public class JsonWriteFilesStrategy implements IWriteFilesStrategy{
+public class JsonWriteFilesStrategy implements IWriteFilesStrategy {
 
-    public void Write(ArrayList<Student> S) {
-        
+    public void write(ArrayList<Student> S) {
+
+        Gson gson = new Gson();
+       
+        try {
+            FileWriter file = new FileWriter("students.json");
+            file.write("{ 'students' : ");
+            file.write(gson.toJson(S));
+            file.write("}");
+            file.flush();
+            file.close();
+            System.out.println("File Created Sussefully");
+            
+        }catch(IOException e){
+            System.out.println(e.getMessage());
+        }
+
     }
-    
+
 }

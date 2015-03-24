@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Reverse engineered Patron_Strategy 2015.03.24 15-53-44-155">
+  <ClassDiagramComponents>
+    <Class xPosition="20.0" yPosition="20.0" package="WriteFiles" name="JsonWriteFilesStrategy" visibility="public">
+      <Constructors/>
+      <Fields/>
+      <Methods>
+        <Method name="write" visibility="public" returnType="void">
+          <Argument type="ArrayList&lt;Student&gt;" name="S"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface xPosition="320.0" yPosition="20.0" package="WriteFiles" name="IWriteFilesStrategy" visibility="public">
+      <Methods>
+        <Method name="write" visibility="public" returnType="void">
+          <Argument type="ArrayList&lt;Student&gt;" name="S"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Class xPosition="620.0" yPosition="20.0" package="WriteFiles" name="XmlWriteFilesStrategy" visibility="public">
+      <Constructors/>
+      <Fields/>
+      <Methods>
+        <Method name="write" visibility="public" returnType="void">
+          <Argument type="ArrayList&lt;Student&gt;" name="S"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class xPosition="920.0" yPosition="20.0" package="strategyPattern" name="StudentManager" visibility="public">
+      <Constructors>
+        <Constructor name="StudentManager" visibility="public">
+          <Argument type="IWriteFilesStrategy" name="strategy"/>
+        </Constructor>
+      </Constructors>
+      <Fields>
+        <Field name="WriteFileStrategy" visibility="private" type="IWriteFilesStrategy"/>
+      </Fields>
+      <Methods>
+        <Method name="WriteFile" visibility="public" returnType="void">
+          <Argument type="ArrayList&lt;Student&gt;" name="S"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class xPosition="20.0" yPosition="420.0" package="strategyPattern" name="Main" visibility="public">
+      <Constructors/>
+      <Fields/>
+      <Methods>
+        <Method name="main" visibility="public" returnType="void" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class xPosition="320.0" yPosition="420.0" package="strategyPattern" name="Student" visibility="public">
+      <Constructors>
+        <Constructor name="Student" visibility="public"/>
+        <Constructor name="Student" visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="code"/>
+          <Argument type="int" name="age"/>
+          <Argument type="String" name="sex"/>
+          <Argument type="String" name="address"/>
+        </Constructor>
+      </Constructors>
+      <Fields>
+        <Field name="name" visibility="private" type="String"/>
+        <Field name="code" visibility="private" type="String"/>
+        <Field name="age" visibility="private" type="int"/>
+        <Field name="sex" visibility="private" type="String"/>
+        <Field name="address" visibility="private" type="String"/>
+      </Fields>
+      <Methods>
+        <Method name="getName" visibility="public" returnType="String"/>
+        <Method name="setName" visibility="public" returnType="void">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getCode" visibility="public" returnType="String"/>
+        <Method name="setCode" visibility="public" returnType="void">
+          <Argument type="String" name="code"/>
+        </Method>
+        <Method name="getAge" visibility="public" returnType="int"/>
+        <Method name="setAge" visibility="public" returnType="void">
+          <Argument type="int" name="age"/>
+        </Method>
+        <Method name="getSex" visibility="public" returnType="String"/>
+        <Method name="setSex" visibility="public" returnType="void">
+          <Argument type="String" name="sex"/>
+        </Method>
+        <Method name="getAddress" visibility="public" returnType="String"/>
+        <Method name="setAddress" visibility="public" returnType="void">
+          <Argument type="String" name="address"/>
+        </Method>
+        <Method name="toString" visibility="public" returnType="String"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="StudentManager" target="Student" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="XmlWriteFilesStrategy" target="Student" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="JsonWriteFilesStrategy" target="IWriteFilesStrategy"/>
+    <UseRelation source="IWriteFilesStrategy" target="Student" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="JsonWriteFilesStrategy" target="Student" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="XmlWriteFilesStrategy" target="IWriteFilesStrategy"/>
+    <HasRelation name="WriteFileStrategy" source="StudentManager" target="IWriteFilesStrategy" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

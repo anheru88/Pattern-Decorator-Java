@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package WriteFiles;
+package strategyPattern;
 
-import Patron_Strategy.Student;
+import strategyPattern.Student;
 import WriteFiles.IWriteFilesStrategy;
 import java.util.ArrayList;
 
@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * @author anheru
  */
 public class StudentManager {
-    IWriteFilesStrategy WriteFileStrategy;
+    private IWriteFilesStrategy WriteFileStrategy;
 
     public StudentManager(IWriteFilesStrategy strategy) {
         this.WriteFileStrategy = strategy;
@@ -22,7 +22,7 @@ public class StudentManager {
     
     public void WriteFile(ArrayList<Student> S)
     {
-        this.WriteFileStrategy.Write(S);
+        this.WriteFileStrategy.write(S);
     }
     
     
