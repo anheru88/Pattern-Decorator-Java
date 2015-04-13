@@ -28,9 +28,8 @@ Imagine que luego de desarrollar la aplicación, se le pide que la aplicación t
     "sexo": "M",
     "direccion": "Desconocida"
 },
-{…},
-…
-}
+{}
+]}
 ```
 
 Aplique el patrón Strategy para diseñar e implementar una solución que cumpla el principio OpenClosed, y satisfacer los requerimientos del cliente.
